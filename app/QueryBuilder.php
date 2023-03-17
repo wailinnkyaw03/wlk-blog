@@ -23,7 +23,7 @@ class QueryBuilder{
 
     //login
     public function login($email, $password){
-        $state = $this->conn->prepare("SELECT * FROM users WHERE email=:email");
+        $state = $this->conn->prepare("SELECT * FROM users INNER JOIN roles on users.role_id=roles.id WHERE email=:email");
         $state->bindParam(":email", $email);
         $state->execute();
         $result = $state->fetch(PDO::FETCH_ASSOC);
