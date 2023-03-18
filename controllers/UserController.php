@@ -84,7 +84,8 @@ if(isset($_POST['email'])){
 }
 if($_GET['action']=="logout"){
     unset($_SESSION['user']);
-    header("location: ../login.php");
+    header("location: ../index.php");
+    // header("location: ".$_SERVER["HTTP_REFERER"]);
 }
 
 ?>

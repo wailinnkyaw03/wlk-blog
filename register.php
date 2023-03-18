@@ -3,7 +3,7 @@ session_start();
 include "./views/frontend/layouts/head.php";
 ?>
 
-<div class="container">
+<div class="container-fluid" id="back">
     <div class="row">
         <div class="col-md-6 offset-md-3">
             <div class="card p-5 shadow" style="margin-top:10%">

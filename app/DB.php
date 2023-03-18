@@ -10,7 +10,7 @@ class DB{
     public function connect(){
         try{
             $this->connection = new PDO("mysql:host=$this->host;dbname=$this->dbname", $this->username, $this->password);
-            echo "Connection Success";
+            // echo "Connection Success";
             return $this->connection;
         }catch(Exception $e){
             echo "Connection Fail";

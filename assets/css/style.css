@@ -1,3 +1,32 @@
 *{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+.text-logo{
+    color: #ED1F24;
+}
+.bg-logo{
+    background-color: #ED1F24;
+}
+.btn-logo{
+    color: #fff;
+    background-color: #ED1F24;
+}
+.btn-logo:hover{
+    color: #fff;
+    background-color: #ED1F24;
+    box-shadow: 2px 3px 4px grey;
+}
+.btn-outline-logo{
+    color: #ED1F24;
+    border: 1px solid #ED1F24;;
+}
+.btn-outline-logo:hover{
+    background-color: #ED1F24;
+    color: #fff;
+}
+#back{
+    background-image: url(../img/back-theme.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}

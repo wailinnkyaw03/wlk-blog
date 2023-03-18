@@ -3,7 +3,7 @@ session_start();
 include "./views/frontend/layouts/head.php";
 ?>
 
-<div class="container">
+<div class="container-fluid" id="back">
     <div class="row">
         <div class="col-md-6 offset-md-3">
             <div class="card p-5 shadow" style="margin-top:10%">
@@ -59,7 +59,7 @@ include "./views/frontend/layouts/head.php";
                         <button class="btn btn-dark" type="submit"><i class="fas fa-unlock me-2"></i>Login</button>
                         <button class="btn btn-dark" type="reset"><i class="fas fa-rotate me-2"></i>Reset</button>
                     </div>
-                    <p class="mt-4">Are you a new user? <a href="register.php" class="text-dark">Register Here</a></p>
+                    <p class="mt-4">Don't have an account? <a href="register.php" class="text-dark">Register Here</a></p>
                 </form>
             </div>
             
