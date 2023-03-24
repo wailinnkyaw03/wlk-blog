@@ -1,4 +1,4 @@
-</main>
+            </main>
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
@@ -13,6 +13,9 @@
                 </footer>
             </div>
         </div>
+        <script src="../../assets/js/jquery.js"></script>
+        <!-- <script src="../../assets/js/bootstrap.bundle.min.js"></script>
+        <script src="../../assets/js/popper.js"></script> -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="../../assets/bk_assets/js/scripts.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
@@ -20,5 +23,13 @@
         <script src="../../assets/bk_assets/assets/demo/chart-bar-demo.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
         <script src="../../assets/bk_assets/js/datatables-simple-demo.js"></script>
+        <script>
+            $(document).ready(function () {
+                $(".delete_id").click(function(){
+                    $id = $(this).data('id');
+                    $("#delete_id").val($id);
+                })
+            });
+    </script>
     </body>
 </html>

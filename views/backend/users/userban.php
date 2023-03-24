@@ -1,8 +1,8 @@
-                    <div class="container-fluid mt-4 px-4">
-                        <h2 class=""><i class="fas fa-users me-2"></i>User List</h2>
+<div class="container-fluid mt-4 px-4">
+                        <h2 class=""><i class="fas fa-user-slash me-2"></i>Banned Users</h2>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item"><a href="admin.php">Dashboard</a></li>
-                            <li class="breadcrumb-item active">User List</li>
+                            <li class="breadcrumb-item active">Banned Users</li>
                         </ol>
                             <?php if(isset($_SESSION['expire'])){
                                 $diff = time() - $_SESSION['expire'];
@@ -30,7 +30,7 @@
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
-                                User Lists
+                                Banned Users
                                 
                             </div>
                             <div class="card-body">
@@ -73,15 +73,7 @@
                                                 <td><?= $user['phone'] ?></td>
                                                 <td><?= $user['address'] ?></td>
                                                 <td>
-                                                    <?php if($user['status']=="Approve"): ?>
-                                                        <span class="badge text-bg-success mb-2">Active</span>
-                                                        <form class="d-inline" action="../../controllers/UserController.php" method="post">
-                                                            <input type="hidden" name="id" value="<?= $user['id'] ?>">
-                                                            <input type="hidden" name="status" value="Ban">
-                                                            <input type="hidden" name="action" value="userstatus">
-                                                            <button type="submit" class="btn btn-sm btn-warning" ><i class="fas fa-user-slash"></i></button>
-                                                        </form>
-                                                    <?php elseif($user['status']=="Ban"): ?>
+                                                    <?php if($user['status']=="Ban"): ?>
                                                         <span class="badge text-bg-warning mb-2">Ban</span>
                                                         <form class="d-inline" action="../../controllers/UserController.php" method="post">
                                                             <input type="hidden" name="id" value="<?= $user['id'] ?>">
@@ -94,24 +86,13 @@
                                                 <td>
                                                     <?php if($user['value']==1): ?>
                                                     <span class="badge text-bg-secondary"><?= $user['roleName'] ?></span>
-                                                    
                                                     <?php elseif($user['value']==3): ?>
                                                     <span class="badge text-bg-dark"><?= $user['roleName'] ?></span>
                                                     <?php elseif($user['value']==2): ?>
                                                     <span class="badge text-bg-success"><?= $user['roleName'] ?></span>
-                                                    <form action="../../controllers/UserController.php" method="post">
-                                                        <input type="hidden" name="id" value="<?= $user['id'] ?>">
-                                                        <input type="hidden" name="action" value="changeRole">
-                                                        <select class="form-select mt-2" name="role_id" id="role_id">
-                                                            <?php foreach($roles as $role): ?>
-                                                            <option class="<?php if($role['id']==3){ echo 'd-none'; } ?>" value="<?= $role['id'] ?>" <?= $user['role_id']==$role['id'] ? "selected" : null ?>><?= $role['roleName'] ?></option>
-                                                            <?php endforeach ?>
-                                                        </select>
-                                                        <button class="btn btn-sm btn-primary mt-2" type="submit">Change</button>
-                                                    </form>
                                                     <?php endif ?>
                                                 </td>
-                                                <td class="">
+                                                <td>
                                                     <button class="btn btn-sm btn-danger delete_id" data-id="<?= $user['id'] ?>" data-bs-target="#userdelete" data-bs-toggle="modal"><i class="fas fa-user-xmark"></i></button>
                                                 </td>
                                             </tr>
@@ -121,6 +102,7 @@
                             </div>
                         </div>
                     </div>
+
 
 <!-- Modal -->
 <div class="modal fade" id="userdelete">

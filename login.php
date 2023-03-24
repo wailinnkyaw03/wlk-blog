@@ -7,15 +7,15 @@ include "./views/frontend/layouts/head.php";
     <div class="row">
         <div class="col-md-6 offset-md-3">
             <div class="card p-5 shadow" style="margin-top:10%">
-            <?php if(isset($_SESSION['expire'])){
-                $diff = time() - $_SESSION['expire'];
-                if($diff > 2){
-                    unset($_SESSION['msg']);
-                    unset($_SESSION['error']);
-                    unset($_SESSION['expire']);
+                <?php if(isset($_SESSION['expire'])){
+                    $diff = time() - $_SESSION['expire'];
+                    if($diff > 1){
+                        unset($_SESSION['msg']);
+                        unset($_SESSION['error']);
+                        unset($_SESSION['expire']);
+                    }
                 }
-            }
-            ?>
+                ?>
                 <?php if(isset($_SESSION['msg'])){ ?>   
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
 
@@ -46,6 +46,12 @@ include "./views/frontend/layouts/head.php";
                     <div class="form-floating mb-4">
                         <input type="password" class="form-control" id="password" name="password" placeholder="Password">
                         <label for="password"><i class="fas fa-key me-2"></i>Password</label>
+                        <div class="form-check mt-3">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" onclick="myFunction()">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Show Password
+                            </label>
+                        </div>
                         <?php 
                         if(isset($_SESSION['v-password'])):
                         ?>
